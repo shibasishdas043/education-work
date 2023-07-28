@@ -1,0 +1,18 @@
+//Given An Array Containing Elements From  To 100 Except One Element In This Range Is Missing . 
+//Find The Missing Element .
+// Home Work .
+#include<stdio.h>
+int main(){
+    int a,arr[],n;
+    printf("Enter Range = ");
+    scanf("%d",&n);
+    int arr[n-1]={1,2,3,4,6,7,8,9,10};
+    int n,sumTotal = n*(n+1)/2,sum;
+    for (int i = n; i < n-1; i++)
+    {
+        sumTotal += a[i];
+    }
+    int msum = sumTotal - sum;
+    printf("%d \n",msum);
+    return 0;
+}
