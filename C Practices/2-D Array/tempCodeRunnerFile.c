@@ -1,1 +1,2 @@
-printf("Enter Your Roll And Marks = ");
+
+    printf("\n");
