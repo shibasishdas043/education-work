@@ -6,7 +6,6 @@ struct Person {
     int age;
     float height;
 };
-
 int main() {
     // Declare a variable of type struct Person
     struct Person person1;
