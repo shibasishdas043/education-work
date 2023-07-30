@@ -19,7 +19,7 @@ int main(){
     printf("\n");
     //Spiral print 
     int minRow = 0;
-    int maxRow = n - 1;
+    int maxRow = m - 1;
     int minColumn = 0;
     int maxColumn = n - 1;
     int totalNumberElements = m * n;
