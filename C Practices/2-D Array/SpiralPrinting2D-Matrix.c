@@ -27,33 +27,34 @@ int main(){
     while (count < totalNumberElements)
     {
         //Print The Minimum Row .
-        for (int j = minColumn; j <= maxColumn; j++)
+        for (int j = minColumn; j <= maxColumn && count < totalNumberElements; j++)
         {
             printf("%d ",a[minRow][j]);
             count++;
         }
         minRow++;
         //Print The Maximum Column .
-        for (int i = minRow; i <= maxRow; i++)
+        for (int i = minRow; i <= maxRow && count < totalNumberElements; i++)
         {
             printf("%d ",a[i][maxColumn]);
             count++;
         }
         maxColumn--;
         //Print The Maximum Row Reverse .
-        for (int j = maxColumn; j >= minColumn; j--)
+        for (int j = maxColumn; j >= minColumn && count < totalNumberElements; j--)
         {
             printf("%d ",a[maxRow][j]);
             count++;
         }
         maxRow--;
         //Print The Minimum Column;
-        for (int i = maxRow; i >= minRow; i--)
+        for (int i = maxRow; i >= minRow && count < totalNumberElements; i--)
         {
             printf("%d ",a[i][minColumn]);
             count++;
         }
         minColumn++;
+
     }
     return 0;
 }    
