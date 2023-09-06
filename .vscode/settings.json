@@ -3,6 +3,10 @@
         "*.java": "java",
         "stdio.h": "c",
         "FBN.C": "cpp",
-        "cmath": "c"
+        "cmath": "c",
+        "ostream": "cpp",
+        "bitset": "cpp",
+        "chrono": "cpp",
+        "algorithm": "cpp"
     }
 }
