@@ -1,8 +1,8 @@
-/*
-   1
-   2 3
-   3 4 5
-   4 5 6 7
+/* 
+   A
+   B C
+   C D E
+   D E F G
 */
 #include<iostream>
 using namespace std;
@@ -10,20 +10,17 @@ int main(){
     int n;
     cout<<"Enter your Number : ";
     cin>>n;
-    int count;
     int row = 1;
     while (row<=n)
     {
-        count = row;
         int col = 1;
         while (col<=row)
         {
-            cout << count << " ";
-            count++;
+            char ch = 'A' + row + col - 2;
+            cout << ch << " ";
             col++;
         }
         cout<<endl;
-
         row++;
     }
     return 0;

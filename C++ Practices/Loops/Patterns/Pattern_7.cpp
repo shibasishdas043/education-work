@@ -1,20 +1,26 @@
+/*
+  * * * * 
+  * * * 
+  * * 
+  * 
+*/
 #include<iostream>
 using namespace std;
 int main(){
     int n;
     cout<<"Enter your Number : ";
     cin>>n;
-    int i = 1;
-    while (i<=n)
+    int row = 1;
+    while (row<=n)
     {
-        int j = i;
-        while (j<=n)
+        int col = row;
+        while (col <= n)
         {
             cout << "*"  << " ";
-            j++;
+            col++;
         }
         cout<<endl;
-        i++;
+        row++;
     }
     return 0;
 }
