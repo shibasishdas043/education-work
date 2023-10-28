@@ -1,11 +1,8 @@
 #include<stdio.h>
 int main(){
-    int row;
-    printf("Enter row");
-    scanf("%d",&row);
-    int column;
-    printf("Enter column");
-    scanf("%d",&column);
+
+    int row = 5;
+    int column = 5;
 
     for (int i = 1; i <= row; i++)
     {

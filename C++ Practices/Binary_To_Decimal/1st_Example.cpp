@@ -4,6 +4,7 @@ using namespace std;
 int main(){
 
     int n;
+    cout<<"Enter Number: ";
     cin>> n;
 
     int ans = 0, i = 0;
@@ -20,6 +21,6 @@ int main(){
        n = n / 10;
        i++;
     }
-    cout << ans << endl;
+    cout <<"The Result Is : "<< ans << endl;
     return 0;
 }
