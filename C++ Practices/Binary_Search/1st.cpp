@@ -1,3 +1,4 @@
+//Return Index Of The Specified Element .
 #include <iostream>
 using namespace std;
 
