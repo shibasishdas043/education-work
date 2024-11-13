@@ -1,4 +1,11 @@
+let score = {
+  win : 0,
+  lost : 0,
+  tie : 0,
+};
+
 var comp;
+let resulMessege;
 
 function batt(){
   let randomNumber = Math.random();
@@ -12,7 +19,6 @@ function batt(){
     comp = 'Stump';
   }
 
-  let resulMessege;
 
   if(comp === 'Ball'){
     resulMessege = 'User Won';
@@ -38,8 +44,6 @@ function bal(){
     comp = 'Stump';
   }
 
-  let resulMessege;
-
   if(comp === 'Ball'){
     resulMessege = 'User Won';
   }
@@ -63,8 +67,6 @@ function stum(){
   else{
     comp = 'Stump';
   }
-
-  let resulMessege;
 
   if(comp === 'Ball'){
     resulMessege = 'User Won';
