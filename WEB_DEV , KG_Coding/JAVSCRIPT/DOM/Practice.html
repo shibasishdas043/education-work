@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h3 id="greeting"> </h3>
+
+  <button id="butt" onclick="buttonPressed()">Click Here</button>
+
+  <script>
+
+    let noOffTimesClicked = 0; 
+    let select = document.querySelector('#butt');
+
+    function buttonPressed(){
+      noOffTimesClicked++;
+      select.innerText = `No Of Time Pressed = ${noOffTimesClicked}`;
+
+    }
+
+    function doGreet(person){
+
+    let date = new Date();
+    console.log(date);
+    let hoursShow = date.getHours();
+    console.log(hoursShow);
+    let minuteShow = date.getMinutes();
+    console.log(minuteShow);
+
+    let heading = document.querySelector('#greeting');
+
+    if(hoursShow > 0 && hoursShow < 24){
+      greet();
+    }
+
+    function greet(){
+      heading.innerText = `Good Morning ${person}`;
+    }
+  }
+    doGreet('Shibasish Das');
+
+
+
+
+  </script>
+</body>
+</html>
