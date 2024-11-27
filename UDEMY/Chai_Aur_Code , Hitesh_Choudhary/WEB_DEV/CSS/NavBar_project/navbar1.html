@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>  
+    
+    <style>
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h2 {
+            color: rgb(175, 42, 109);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .nav1 {
+            background-color: #678588c2;
+            width: 200px;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .nav1 ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav1 li {
+            margin-bottom: 12px;
+        }
+        .nav1 a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            width: 40%;
+            border-radius: 5px;
+        }
+        .nav1 a:hover {
+            background-color: bisque;
+        }
+        .nav1 .login-btn {
+            background-color: #83c89fdd;
+            color: aliceblue;
+            border: none;
+            border-radius: 4px;
+            padding: 8px;
+            width: 100px;
+            cursor: pointer;
+            
+        }
+        .login-btn:hover {
+            background-color: rgba(165, 61, 61, 0.464);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <h2>Nav Bar Project</h2>
+        <nav class="nav1">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Products</a></li>
+            </ul>
+            <button class="login-btn">
+                Log In
+            </button>
+        </nav>
+    </div>
+</body>
+</html>
