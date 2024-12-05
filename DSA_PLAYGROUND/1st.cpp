@@ -15,6 +15,7 @@ void push(int pushedElement){
 }
 
 void pop(){
+    // if stack is empty, then top will be -1
     if(top == -1){
         cout << "Stack Is Empty!" << endl;
         return;
