@@ -11,14 +11,16 @@ void addNode(struct node *head,int value){
     struct node *temp = (struct node *)malloc(sizeof(struct node));
     temp -> data = value;
     temp -> link = NULL;
+
     if (head == NULL)
     {
         printf("Its Empty !");
         return;
     }
-    struct node *ptr = NULL;
-    ptr = head;
-    while (ptr != NULL  )
+
+    struct node *ptr = head;
+
+    while (ptr -> link != NULL  )
     {
         ptr = ptr -> link;
     }
@@ -81,6 +83,8 @@ int main(){
 
     
     addNode(head,400);
+    addNode(head,500);
+    addNode(head,600);
     printCountNodes(head);
     printData(head);
 
