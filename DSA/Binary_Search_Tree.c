@@ -61,6 +61,7 @@ int main() {
     int number;
     printf("Enter Number To Searh : ");
     scanf("%d",&number);
+    
     if (traverse_The_Tree(root, number) == true) {
         printf("\nFound");
     }
