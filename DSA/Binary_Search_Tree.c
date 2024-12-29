@@ -65,7 +65,7 @@ int main() {
         printf("\nFound");
     }
     else {
-        printf("\nNot Found");
+        printf("\nNot Found\n");
     }
     
 
