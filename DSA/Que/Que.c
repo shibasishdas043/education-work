@@ -21,11 +21,22 @@ void insert_To_Que(int value) {
 }
 
 void delete_Que() {
-    front += 1;
+    if (front == -1) {
+        printf("Que Is Underflow !");
+        return;
+    }
+    else if(front == rear) {
+        front = rear = -1;
+    }
+    else {
+        int temp = arr_Que[front];
+        front++;
+        printf("Item Deleted : %d \n",temp);
+    }
 }
 
 void print_Que() {
-    int i = arr_Que[front];
+    int i = front;
     while(i <= rear) {
         printf("Que Values : %d \n",arr_Que[i]);
         i++;
