@@ -34,11 +34,15 @@ let vehOne = new Vehicle("Audi", "R8")
 // ENCUPSULATION
 
 class BAnkAccount {
-    #balance = 0
+    #balance = 0`git `
 
-    deposit(amount){
+    deposit(amount) {
         this.#balance += amount
         return this.#balance
+    }
+
+    getBalance() {
+        return`$ ${this.#balance}`
     }
 }
 
