@@ -1,22 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node
-{
+struct node {
     int value;
     struct node *left;
     struct node *right;
 };
 
-struct node *create_Node(int value)
-{
+struct node *create_Node(int value) {
     struct node *result = malloc(sizeof(struct node));
 
-    if (result != NULL)
-    {
+    if (result != NULL) {
+        result->value = value;
         result->left = NULL;
         result->right = NULL;
-        result->value = value;
     }
     return result;
 }
@@ -28,12 +25,10 @@ void printTree(struct node *root) {
     printf("Root Value = %d\n",root -> value);
     printf("Root Left Value = %d\n",root -> left);
     printf("Root Right Value = %d\n",root -> right);
-    printf("\n");
-    
+    printf("\n");   
 }
 
-int main()
-{
+int main() {
     struct node *n1 = create_Node(10);
     struct node *n2 = create_Node(20);
     struct node *n3 = create_Node(30);
