@@ -60,5 +60,14 @@
   "files.associations": {
     ".fantomasignore": "ignore",
     "iostream": "cpp"
-  }
+  },
+  "python.testing.unittestArgs": [
+    "-v",
+    "-s",
+    "./PYTHON",
+    "-p",
+    "test_*.py"
+  ],
+  "python.testing.pytestEnabled": false,
+  "python.testing.unittestEnabled": true
 }

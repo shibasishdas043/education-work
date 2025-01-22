@@ -46,7 +46,46 @@ class BAnkAccount {
     }
 }
 
+// STATIC METHOD
+
+class Calculator {
+    static add(a, b) {
+        return a + b
+    }
+}
+
+// let miniCalc = new Calculator()
+// console.log(miniCalc.add(2,3))   
+
+// console.log(Calculator.add(2, 3))
 
 
+// GETTERS AND SETTERS
 
+class Employee {
+    #salary
 
+    constructor(name, salary) {
+        if (salary < 0) {
+            throw new error`Salary Can't Be Negative`
+        }
+        this.name = name 
+        this.#salary = salary
+    }
+
+    get salary() {
+        return `You Are Not Allowed To See Salary`
+    }
+
+    set salary(value) {
+        if (value < 0) {
+            console.error("Invalid")
+        } else {
+            this.salary = value
+        }
+    }
+}
+
+let em = new Employee("Alice", 25000)
+console.log(em.name)
+console.log(em.salary) 
