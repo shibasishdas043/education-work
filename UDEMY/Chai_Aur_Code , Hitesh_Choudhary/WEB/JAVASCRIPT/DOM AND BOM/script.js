@@ -1,0 +1,1 @@
+console.log("Hello Your Future Is Black");  
