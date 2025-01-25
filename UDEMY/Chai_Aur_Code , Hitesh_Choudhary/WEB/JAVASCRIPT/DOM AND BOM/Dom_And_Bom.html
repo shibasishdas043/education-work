@@ -9,10 +9,58 @@
    </style>
 </head>
 <body>
-   <div id="myDiv">Hello, DOM!</div>
+   <!-- <div id="myDiv">Hello, DOM!</div>
    <button id="myButton">Click Me</button>
 
+
+   <section id="example-1">
+      <h2>Event Handling In The Dom</h2>
+      <button id="clickMeButton">Click Me</button>
+   </section> -->
+
+
+   <section id="example-7">
+         <h2>Event Delegation</h2>
+      <ul id="tealist">
+         <li class="teaItem">Green Tea</li>
+         <li class="teaItem">Black Tea</li>
+         <li class="teaItem">Oolong Tea</li>
+         </section>
+      </ul>
+      <p>Click On ANy Tea to Select It !</p>
+   </section>
+
+
    <script>
+
+      document.getElementById("tealist").addEventListener("click", function(event){
+         console.log(event.target);
+      })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // document.getElementById("clickMeButton").addEventListener("mouseover", function(){
+      //    alert("Chai Code");
+      // })
+
       // document.getElementById("myButton").addEventListener("click", function(){
       //    // console.log(this);
       //    let l = document.getElementById("myDiv");
@@ -21,10 +69,10 @@
       //    console.log(l.innerText);
       // })
 
-      document.getElementById("myButton").addEventListener("click", function(){
-         let l = document.getElementById("myDiv");
-         l.classList.add("color");
-      })
+      // document.getElementById("myButton").addEventListener("click", function(){
+      //    let l = document.getElementById("myDiv");
+      //    l.classList.add("color");
+      // })
 
    </script>
 </body>
