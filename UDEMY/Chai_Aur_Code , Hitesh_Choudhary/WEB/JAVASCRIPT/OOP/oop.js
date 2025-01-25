@@ -97,12 +97,18 @@ class User{
 
     set password(value){
         this._password = value.toUpperCase()
+
     }
 }
 
 const shibasish = new User("shibasishdas043@gmail.com", "abc");
-console.log(shibasish.email);
+// console.log(shibasish.email);
 // console.log(shibasish.password);
 
+class hello extends User{
+}
+let x = new hello("gandu", "hello, Hello");
 
+console.log(x.email);
+console.log(x.password);
 

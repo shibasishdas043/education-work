@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>DOM & BOM Manipulation</title>
+   <style>
+      .color{
+         color: red;
+      }
+   </style>
+</head>
+<body>
+   <div id="myDiv">Hello, DOM!</div>
+   <button id="myButton">Click Me</button>
+
+   <script>
+      // document.getElementById("myButton").addEventListener("click", function(){
+      //    // console.log(this);
+      //    let l = document.getElementById("myDiv");
+      //    console.log(l);
+      //    l.innerText = "Boooom";
+      //    console.log(l.innerText);
+      // })
+
+      document.getElementById("myButton").addEventListener("click", function(){
+         let l = document.getElementById("myDiv");
+         l.classList.add("color");
+      })
+
+   </script>
+</body>
+</html>
