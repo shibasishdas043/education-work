@@ -12,14 +12,12 @@
    <!-- <div id="myDiv">Hello, DOM!</div>
    <button id="myButton">Click Me</button>
 
-
    <section id="example-1">
       <h2>Event Handling In The Dom</h2>
       <button id="clickMeButton">Click Me</button>
    </section> -->
 
-
-   <section id="example-7">
+   <!-- <section id="example-7">
          <h2>Event Delegation</h2>
       <ul id="tealist">
          <li class="teaItem">Green Tea</li>
@@ -28,24 +26,44 @@
          </section>
       </ul>
       <p>Click On ANy Tea to Select It !</p>
-   </section>
+   </section> -->
 
+   <!-- <section id="example-8">
+      <h2>Form Handling</h2>
+      <form id="feedbackForm">
+         <label for="feedbackInput">Your Feedback</label>
+         <input type="text" id="feedbackInput" placeholder="Enter Feedback">
+         <button type="submit">Submit Feedback</button>
+      </form>
+      <p id="feedbackDisplay">Change The Feedback Display</p> -->
+
+      <!-- <section id="example-9">
+         <h2>Dom Content loaded</h2>
+         <p id="domstatus">Waiting For DM Loaded</p>
+      </section> -->
+
+      <section id="example-10">
+         <h2>CSS Classes Manipualation</h2>
+         <p id="description">This text will change color</p>
+         <button id="toggleHighlight">
+            Toggle Highlight
+         </button>
+
+      </section>
 
    <script>
+      document.getElementById("toggleHighlight").addEventListener("click", function(){
+         let l = document.getElementById("description");
+         if(l.style.backgroundColor === "yellow"){
+            l.style.backgroundColor = "transparent";
+         }
+         if(l.style.backgroundColor === "transparent"){
+            l.style.backgroundColor = "yellow";
+         }
 
-      document.getElementById("tealist").addEventListener("click", function(event){
-         console.log(event.target);
-      })
+      });
 
-
-
-
-
-
-
-
-
-
+       
 
 
 
@@ -56,6 +74,43 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // document.addEventListener("DOMContentLoaded", function(){
+      //    document.getElementById("domstatus").textContent = "DOM Is Loading Complete";
+      // })
+
+      //  document.getElementById("feedbackForm").addEventListener("submit", function(event){
+      //    event.preventDefault();
+      //    let feedBack = document.getElementById("feedbackInput").value;
+      //    console.log(feedBack);
+
+      //    document.getElementById("feedbackDisplay").textContent = `Feed Back Is : ${feedBack}`;
+
+         // let l = document.getElementById("feedbackDisplay").addEventListener.textContent;
+         // l.add.color 
+//      });
+
+      // document.getElementById("tealist").addEventListener("click", function(event){
+      //    if(event.target && event.target.matches(".teaItem")){
+      //       alert(`Clicked ${event.target.textContent}`)
+      //    }
+      // });
 
       // document.getElementById("clickMeButton").addEventListener("mouseover", function(){
       //    alert("Chai Code");
