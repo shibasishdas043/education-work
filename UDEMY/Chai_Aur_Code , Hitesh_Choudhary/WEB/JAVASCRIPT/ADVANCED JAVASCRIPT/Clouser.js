@@ -40,11 +40,13 @@ function delayedGreeting(name) {
 function a(){
     let name = "Shibasish";
 
-    function b(){
+    function b(param){
+        console.log(h);
         console.log(name);
     }
-    return b();
+    return b;
 }
-
 let x = a();
+x();
+var h = "Hello";
 x();
