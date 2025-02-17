@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function renderTask(tasks){
+
         console.log(tasks);
     }
 })
