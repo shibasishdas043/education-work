@@ -26,7 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function renderTask(tasks){
-
-        console.log(tasks);
+        const list = document.createElement("li");
+        list.id = "data-id";
+        list.innerHTML = `<span> ${tasks.text} </span>
+                          <button> Delete </button>`;
+        todoList.appendChild(list);
     }
 })
