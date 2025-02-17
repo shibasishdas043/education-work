@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         tasks.push(newTask);
         saveTaskToLocalStorage();
         todoInput.value = "";
+        renderTask(tasks);
         console.log(tasks);
     });
 
@@ -28,8 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
     function renderTask(tasks){
         const list = document.createElement("li");
         list.id = "data-id";
+        if (tasks.isCompleted) list.classList.add("completed");
+
         list.innerHTML = `<span> ${tasks.text} </span>
                           <button> Delete </button>`;
+
+        list.addEventListener()
         todoList.appendChild(list);
     }
 })
