@@ -1,47 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6a8cbfc-1941-493f-b104-6eff828d3609" name="Changes" comment="" />
+    <list default="true" id="b6a8cbfc-1941-493f-b104-6eff828d3609" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UDEMY/Chai_Aur_Code , Hitesh_Choudhary/WEB/JAVASCRIPT/PLAYGROUND/MANIPULATE.html" beforeDir="false" afterPath="$PROJECT_DIR$/UDEMY/Chai_Aur_Code , Hitesh_Choudhary/WEB/JAVASCRIPT/PLAYGROUND/manipulate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UDEMY/Chai_Aur_Code , Hitesh_Choudhary/WEB/JAVASCRIPT/PLAYGROUND/MANIPULATE_HTML_ELEMENT.js" beforeDir="false" afterPath="$PROJECT_DIR$/UDEMY/Chai_Aur_Code , Hitesh_Choudhary/WEB/JAVASCRIPT/PLAYGROUND/manipulate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UDEMY/Chai_Aur_Code , Hitesh_Choudhary/WEB/JAVASCRIPT/Part 4/arrayChallenge.js" beforeDir="false" afterPath="$PROJECT_DIR$/UDEMY/Chai_Aur_Code , Hitesh_Choudhary/WEB/JAVASCRIPT/PART 4/arrayChallenge.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UDEMY/Chai_Aur_Code , Hitesh_Choudhary/WEB/JAVASCRIPT/Part1/changes.js" beforeDir="false" afterPath="$PROJECT_DIR$/UDEMY/Chai_Aur_Code , Hitesh_Choudhary/WEB/JAVASCRIPT/PART 1/changes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UDEMY/Chai_Aur_Code , Hitesh_Choudhary/WEB/JAVASCRIPT/Part1/datatype.js" beforeDir="false" afterPath="$PROJECT_DIR$/UDEMY/Chai_Aur_Code , Hitesh_Choudhary/WEB/JAVASCRIPT/PART 1/datatype.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UDEMY/Chai_Aur_Code , Hitesh_Choudhary/WEB/JAVASCRIPT/Part1/objects.js" beforeDir="false" afterPath="$PROJECT_DIR$/UDEMY/Chai_Aur_Code , Hitesh_Choudhary/WEB/JAVASCRIPT/PART 1/objects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UDEMY/Chai_Aur_Code , Hitesh_Choudhary/WEB/JAVASCRIPT/Part1/printing.js" beforeDir="false" afterPath="$PROJECT_DIR$/UDEMY/Chai_Aur_Code , Hitesh_Choudhary/WEB/JAVASCRIPT/PART 1/printing.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "shibasishdas043"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;shibasishdas043&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/shibasishdas043/education-work.git",
-    "accountId": "338ec970-a573-46be-92aa-9c1420c4f419"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/shibasishdas043/education-work.git&quot;,
+    &quot;accountId&quot;: &quot;338ec970-a573-46be-92aa-9c1420c4f419&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2s4VxUffkw6pgfiDo6NpDO9u2RD" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "next",
-    "last_opened_file_path": "/home/shibasish-das/Code",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js.debug.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;next&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/shibasish-das/Code/education-work&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -58,6 +86,8 @@
       <option name="presentableId" value="Default" />
       <updated>1737715080665</updated>
       <workItem from="1737715082306" duration="54000" />
+      <workItem from="1739814000941" duration="1811000" />
+      <workItem from="1739941395155" duration="102000" />
     </task>
     <servers />
   </component>
