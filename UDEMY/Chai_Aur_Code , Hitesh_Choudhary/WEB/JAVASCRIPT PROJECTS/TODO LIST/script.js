@@ -29,12 +29,17 @@ document.addEventListener("DOMContentLoaded", () => {
     function renderTask(tasks){
         const list = document.createElement("li");
         list.id = "data-id";
-        if (tasks.isCompleted) list.classList.add("completed");
+        if (tasks.completed) list.classList.add("completed");
 
         list.innerHTML = `<span> ${tasks.text} </span>
                           <button> Delete </button>`;
 
-        list.addEventListener()
+        list.addEventListener("click", (e) => {
+            if (e.target.tagName === "BUTTON"){
+                return;
+            }
+            tasks.completed = !tasks.completed;
+        });
         todoList.appendChild(list);
     }
 })

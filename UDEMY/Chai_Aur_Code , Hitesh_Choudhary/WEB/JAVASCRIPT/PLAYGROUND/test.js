@@ -26,7 +26,7 @@ if (true) {
 }
 console.log(blockVar); // ✅ Accessible here (because var is function-scoped)
 
-import { name } from  "./export";
+import { name } from  "./EXPORT";
 console.log(name);
 
 
