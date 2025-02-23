@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const {name, main, weather} = data;
             cityName.textContent = name;
-            tempreture.textContent = `Tempreture : ${main.value}`;
+            tempreture.textContent = `Tempreture : ${main.textContent}`;
             description.textContent = `Description : ${weather[0].description}`;
 
             //Unlock The Display
