@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-<<<<<<< HEAD
+
     function renderTask(tasks){
         const list = document.createElement("li");
         list.id = "data-id";
@@ -81,10 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
             tasks.completed = !tasks.completed;
         });
         todoList.appendChild(list);
-=======
+
     // SAVE TASKS TO LOCAL STORAGE
     function saveTasks() {
         localStorage.setItem("tasks", JSON.stringify(tasks));
->>>>>>> cab92c96b0efa46fc8b7ce680ecff82bebd87b75
+
     }
 });
