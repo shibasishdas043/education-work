@@ -1,66 +1,58 @@
-
 document.addEventListener("DOMContentLoaded", () => {
+    const API_KEY = "298b0a71c0881dde04168323716f68e6";
 
-        const cityInput = document.getElementById("city-input");
-        const getWeatherButton = document.getElementById("get-weather-btn");
-        const weatherInfo = document.getElementById("weather-info");
-        const cityName = document.getElementById("city-name");
-        const tempreture = document.getElementById("temperature");
-        const description = document.getElementById("description");
-        const errorMessage = document.getElementById("error-message");
+    const cityInput = document.getElementById("city-input");
+    const getWeatherButton = document.getElementById("get-weather-btn");
+    const weatherInfo = document.getElementById("weather-info");
+    const cityName = document.getElementById("city-name");
+    const tempreture = document.getElementById("temperature");
+    const description = document.getElementById("description");
+    const errorMessage = document.getElementById("error-message");
 
-        const API_KEY = "298b0a71c0881dde04168323716f68e6";
+    let cities = JSON.parse(localStorage.getItem("cities")) || [];
 
-        getWeatherButton.addEventListener("click", async () => {
-            const city = cityInput.value.trim();
-            if (!city) return;
+    getWeatherButton.addEventListener("click", async () => {
+        const city = cityInput.value.trim();
+        if (!city) return;
 
-            //It May Throw Error
-            //Server/Database Is In Another Contenent
+        try {
+            const weatherData = await fetchWeatherData(city);
+            displayWeatherData(weatherData);
 
-            try {
-               const weatherData = await fetchWeatherData(city);
-               displayWeatherData(weatherData);
+            // Update cities array and save to local storage
+            if (!cities.includes(city)) {
+                cities.push(city);
+                localStorage.setItem("cities", JSON.stringify(cities));
             }
-            catch (error) {
-                showError();
-            }
+        } catch (error) {
+            showError();
+        }
+    });
 
-        });
+    async function fetchWeatherData(city) {
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
+        const response = await fetch(url);
 
-        async function fetchWeatherData(city){
-            //Gets The Data
-            const url = `b1b15e88fa797225412429c1c50c122a1">api.openweathermap.org/data/2.5/forecast?id&appid=${API_KEY}`;
-
-            const response = await fetch(url);
-
-            console.log(typeof response);
-            console.log("Response",response);
-
-            if (!response.ok) {
-                throw new Error("City Not Found!");
-            }
-            await response.json();
+        if (!response.ok) {
+            throw new Error("City Not Found!");
         }
 
-        function displayWeatherData(data){
-            //Show The Data
-            console.log(data);
+        return await response.json();
+    }
 
-            const {name, main, weather} = data;
-            cityName.textContent = name;
-            tempreture.textContent = `Tempreture : ${main.textContent}`;
-            description.textContent = `Description : ${weather[0].description}`;
+    function displayWeatherData(data) {
+        const { name, main, weather } = data;
+        cityName.textContent = name;
+        tempreture.textContent = `Temperature: ${(main.temp - 273.15).toFixed(2)}°C`; // Convert Kelvin to Celsius
+        description.textContent = `Description: ${weather[0].description}`;
 
-            //Unlock The Display
-            weatherInfo.classList.remove("hidden");
-            errorMessage.classList.add("hidden");
+        // Unlock the display
+        weatherInfo.classList.remove("hidden");
+        errorMessage.classList.add("hidden");
+    }
 
-        }
-
-        function showError(){
-            weatherInfo.classList.remove("hidden");
-            errorMessage.classList.add("hidden");
-        }
-
+    function showError() {
+        weatherInfo.classList.add("hidden");
+        errorMessage.classList.remove("hidden");
+    }
 });
