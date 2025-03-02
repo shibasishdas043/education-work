@@ -8,6 +8,4 @@ function gun(fn){
 	console.log("Leaving Gun");
 
 }
-gun(function () {
-	console.log("New Function Passed");
-});
+gun(fun());
