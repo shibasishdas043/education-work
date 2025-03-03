@@ -1,93 +1,88 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const cart = [];
 
-document.addEventListener("DOMContentLoaded", () =>{
+    // Dynamically Change Products
+    const productList = document.getElementById("product-list");
 
-	const cart = [];
+    // Items In cart | Cart Is Empty Or Not Notifier Paragraph
+    const cartItems = document.getElementById("cart-item");
+    const emptyCartNotifier = document.getElementById("empty-cart");
 
-	// Dynamically Change Products
-	const productList = document.getElementById("product-list");
+    // Total Cart Items When Empty It's Going To Be Hidden  |  Total Price | Checkout Button
+    const cartTotal = document.getElementById("cart-Total");
+    const totalPrice = document.getElementById("total-price");
+    const checkoutButton = document.getElementById("checkout-btn");
 
-	// Items In cart | Cart Is Empty Or Not Notifier Paragraph
-	const cartItems = document.getElementById("cart-item");
-	const emptyCartNotifier = document.getElementById("empty-cart");
+    // Products List Object
+    const products_Object_Array = [
+        { id: 1, name: "product1", price: 100 },
+        { id: 2, name: "product2", price: 200 },
+        { id: 3, name: "product3", price: 300 },
+    ];
 
-	// Total Cart Items When Empty It's Going To Be Hidden  |  Total Price | Checkout Button
-	const cartTotal = document.getElementById("cart-Total");
-	const totalPrice = document.getElementById("total-price");
-	const checkoutButton = document.getElementById("checkout-btn");
+    // Dynamically Show The Products On The Products List Section
+    products_Object_Array.forEach(iterator => {
+        const dynamic_Display_Products = document.createElement("div");
+        dynamic_Display_Products.classList.add("product");
 
+        dynamic_Display_Products.innerHTML = `<span>${iterator.name} - Price $${iterator.price.toFixed(2)}</span> 
+                                              <button data-id="${iterator.id}">Add To Cart</button>`;
 
-	//Products List Object
-	const products_Object_Array = [
-		{id:1, name:"product1", price:100},
-		{id:2, name:"product2", price:200},
-		{id:3, name:"product3", price:300},
-	];
+        productList.appendChild(dynamic_Display_Products);
+    });
 
+    // Specify The Add To cart Button On The Lists Of The Products
+    productList.addEventListener("click", (event) => {
+        if (event.target.tagName === "BUTTON") {
+            const product_Id = parseInt(event.target.getAttribute("data-id"));
 
-	products_Object_Array.forEach(iterator => {
-		const dynamic_Display_Products = document.createElement("div");
-		dynamic_Display_Products.classList.add("product");
+            // Find the product by ID
+            const product_Find = products_Object_Array.find(iterator => iterator.id === product_Id);
 
-		dynamic_Display_Products.innerHTML = `<span>${iterator.name} - Price $${iterator.price.toFixed(2)}</span> 
-											  <button data-id="${iterator.id}">Add To Cart</button>`;
+            // Add To Cart Function Call
+            add_To_Cart(product_Find);
+        }
+    });
 
-		productList.appendChild(dynamic_Display_Products);
-	});
+    // Products Going To The Cart | Saved
+    function add_To_Cart(product_Saved_To_Cart) {
+        cart.push(product_Saved_To_Cart);
 
+        // Render Cart In Display
+        render_Cart();
+    }
 
-	productList.addEventListener("click", (event) =>{
-		if (event.target.tagName === "BUTTON"){
+    // Render Saved Cart Items To The Display
+    function render_Cart() {
+        cartItems.innerHTML = "";
 
-		 	  const product_Id = parseInt(event.target.getAttribute("data-id"));
-			  const product_Find = products_Object_Array.find(iterator => iterator.id === product_Id);
+        let total_Price = 0;
 
-			  console.log(product_Find);
+        if (cart.length > 0) {
+            emptyCartNotifier.classList.add("hidden");
+            cartTotal.classList.remove("hidden");
 
-			  // Add To Cart Function Call
-			  add_To_Cart(product_Id);
-		}
-	});
+            cart.forEach((item) => {
+                total_Price += item.price;
 
-	// Products Going To The Cart
-	function add_To_Cart(product_Saved_To_Cart){
-		cart.push(product_Saved_To_Cart);
+                const cartItem = document.createElement("div");
+                cartItem.innerHTML = `${item.name} - $${item.price.toFixed(2)}`;
 
-		// Render Cart In Display
-		render_Cart();
-	}
+                cartItems.appendChild(cartItem);
+            });
 
-	// Render Saved Cart Items To The Display
-	function render_Cart(){
-		cartItems.innerText = " ";
-		let total_Price = 0;
+            totalPrice.textContent = `$${total_Price.toFixed(2)}`;
+        } else {
+            emptyCartNotifier.classList.remove("hidden");
+            cartTotal.classList.add("hidden");
+            totalPrice.textContent = `$0.00`;
+        }
+    }
 
-		if (cart.length > 0){
-			emptyCartNotifier.classList.add("Hidden");
-			cartTotal.classList.remove("hidden");
+    checkoutButton.addEventListener("click", () => {
+        cart.length = 0;
+        alert("Checkout Successful");
 
-			cart.forEach((item , index) => {
- 				total_Price += item.price;
-				 const cartItem = document.createElement("div");
-
-				 cartItem.innerHTML = `${item.price} - $${item.price.toFixed(2)}`;
-
-				 cartItems.appendChild(cartItem);
-
-				 total_Price.textContent = `${totalPrice.toFixed(2)}`;
-			});
-		}else {
-			emptyCartNotifier.classList.remove("hidden");
-			totalPrice.textContent = `0.00`;
-
-		}
-	}
-
-	checkoutButton.addEventListener("click", () => {
-		cart.length = 0;
-		alert("Checkout Successful");
-
-		render_Cart();
-	});
-
+        render_Cart();
+    });
 });
-
