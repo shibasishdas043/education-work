@@ -1,5 +1,5 @@
 function fun(){
-	console.log("fun called");
+	console.log("Fun Called");
 }
 
 function gun(fn){
@@ -8,4 +8,4 @@ function gun(fn){
 	console.log("Leaving Gun");
 
 }
-gun(fun());
+gun(fun);
