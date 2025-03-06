@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let total_Price = 0;
 
-        if (cart.length > 0) {
+        if (cart.lengt > 0) {
             emptyCartNotifier.classList.add("hidden");
             cartTotal.classList.remove("hidden");
 
@@ -73,8 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             totalPrice.textContent = `$${total_Price.toFixed(2)}`;
         } else {
-            emptyCartNotifier.classList.remove("hidden");
-            cartTotal.classList.add("hidden");
+            
             totalPrice.textContent = `$0.00`;
         }
     }
