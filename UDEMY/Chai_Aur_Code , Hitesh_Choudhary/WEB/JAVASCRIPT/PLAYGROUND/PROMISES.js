@@ -19,6 +19,33 @@ function fetchData(url,fn){
     },3000);
 }
 
-let x = fetchData("www.google.com", function downloded(response){
+function writeFile(data, filename){    
+    console.log("Start Writing");
+
+    setTimeout(function writer(){
+        console.log("Writing Completed");
+
+        let write = data;
+        filename(writer);
+    },6000);
+}
+
+function uploadFile(data, file){
+    console.log("Starting Upload");
+
+    setTimeout(function uploader(){
+        console.log("Upload Complete");
+
+        let fileName = data;
+        file(fileName);
+    }, 9000);
+}
+
+fetchData("www.google.com", function downloded(response){
     console.log("Downloaded : ",response);
+    writeFile(response, function writeCallback(writeValue){
+        uploadFile(response, function uploadCallback(uploadValue){
+            console.log("The Data :",response,"Is written By Value : ",writeValue,"Uploaded By :",uploadValue);
+        })
+    });
 });
