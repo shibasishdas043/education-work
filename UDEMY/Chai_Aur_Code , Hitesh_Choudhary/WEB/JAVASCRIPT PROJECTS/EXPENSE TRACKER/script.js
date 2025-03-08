@@ -77,24 +77,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const expenseListDisplay = document.getElementById("expense-list");
     const totalAmountDisplay = document.getElementById("total-amount");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    let expensesArray = [];
+    let totalAmount = 
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
