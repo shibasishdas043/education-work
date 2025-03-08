@@ -78,8 +78,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const totalAmountDisplay = document.getElementById("total-amount");
 
     let expensesArray = [];
-    let totalAmount = 
-    
+    let totalAmount = calculateTotal();
+
+    expenseForm.addEventListener("submit", (e) => {
+        e.preventDefault()
+        const name = expenseNameInput.value.trim();
+        const amount = parseFloat(expenseAmountInput.value.trim());
+
+        if(amount !== "" && !isNaN(amount) && amount > 0){
+            const newExpenses = {
+                id : Date.now(),
+                name : name,
+                amount : amount,
+            }
+            expensesArray.push(newExpenses);
+        }
+    });
+
+
+    function calculateTotal(){}
+
 
 
 
