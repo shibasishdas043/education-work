@@ -92,12 +92,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 amount : amount,
             }
             expensesArray.push(newExpenses);
+            saveExpensesToLocal();
+
+            // Clear The Input Section
+            expenseNameInput.value = "";
+            expenseAmountInput.value = "";
         }
     });
 
 
-    function calculateTotal(){}
+    function calculateTotal(){
+        return expensesArray.reduce((sum, expense) => sum + expense.amount, 0);
+    }
 
+    function saveExpensesToLocal(){
+        localStorage.setItem("expensesArray", JSON.stringify(expensesArray));
+    }
 
 
 
