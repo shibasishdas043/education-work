@@ -1,73 +1,3 @@
-// document.addEventListener("DOMContentLoaded", () => {
-//   const expenseForm = document.getElementById("expense-form");
-//   const expenseNameInput = document.getElementById("expense-name");
-//   const expenseAmountInput = document.getElementById("expense-amount");
-//   const expenseList = document.getElementById("expense-list");
-//   const totalAmountDisplay = document.getElementById("total-amount");
-
-//   let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
-//   let totalAmount = calculateTotal();
-
-//   renderExpenses();
-
-//   expenseForm.addEventListener("submit", (e) => {
-//     e.preventDefault();
-//     const name = expenseNameInput.value.trim();
-//     const amount = parseFloat(expenseAmountInput.value.trim());
-
-//     if (name !== "" && !isNaN(amount) && amount > 0) {
-//       const newExpense = {
-//         id: Date.now(),
-//         name: name,
-//         amount: amount,
-//       };
-//       expenses.push(newExpense);
-//       saveExpensesTolocal();
-//       renderExpenses();
-//       updateTotal();
-
-//       //clear input
-//       expenseNameInput.value = "";
-//       expenseAmountInput.value = "";
-//     }
-//   });
-
-//   function renderExpenses() {
-//     expenseList.innerHTML = "";
-//     expenses.forEach((expense) => {
-//       const li = document.createElement("li");
-//       li.innerHTML = `
-//         ${expense.name} - $${expense.amount}
-//         <button data-id="${expense.id}">Delete</button>
-//         `;
-//       expenseList.appendChild(li);
-//     });
-//   }
-
-//   function calculateTotal() {
-//     return expenses.reduce((sum, expense) => sum + expense.amount, 0);
-//   }
-
-//   function saveExpensesTolocal() {
-//     localStorage.setItem("expenses", JSON.stringify(expenses));
-//   }
-
-//   function updateTotal() {
-//     totalAmount = calculateTotal();
-//     totalAmountDisplay.textContent = totalAmount.toFixed(2);
-//   }
-
-//   expenseList.addEventListener("click", (e) => {
-//     if (e.target.tagName === "BUTTON") {
-//       const expenseId = parseInt(e.target.getAttribute("data-id"));
-//       expenses = expenses.filter((expense) => expense.id !== expenseId);
-
-//       saveExpensesTolocal();
-//       renderExpenses();
-//       updateTotal();
-//     }
-//   });
-// });
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -77,8 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const expenseListDisplay = document.getElementById("expense-list");
     const totalAmountDisplay = document.getElementById("total-amount");
 
-    let expensesArray = [];
+    let expensesArray = JSON.parse(localStorage.getItem("expensesArray")) || [];
     let totalAmount = calculateTotal();
+
+    renderExpenses();
 
     expenseForm.addEventListener("submit", (e) => {
         e.preventDefault()
@@ -93,6 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             expensesArray.push(newExpenses);
             saveExpensesToLocal();
+            renderExpenses();
+            updateTotal();
 
             // Clear The Input Section
             expenseNameInput.value = "";
@@ -100,6 +34,26 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    function renderExpenses(){
+        expenseListDisplay.innerHTML = "";
+        expensesArray.forEach(iterator => {
+            const li = document.createElement("li");
+            li.innerHTML = `${iterator.name} - $${iterator.amount} <button data-id = "${iterator.id}">Remove</button>`;
+            expenseListDisplay.appendChild(li);
+
+        });
+    }
+
+    expenseListDisplay.addEventListener("click", (event) => {
+        if(event.target.tagName === "BUTTON"){
+            const expenseId = parseInt(event.target.getAttribute("data-id"));
+            expensesArray = expensesArray.filter(iterator => iterator.id !== expenseId);
+
+            updateTotal();
+            renderExpenses();
+            saveExpensesToLocal();
+        }
+    });
 
     function calculateTotal(){
         return expensesArray.reduce((sum, expense) => sum + expense.amount, 0);
@@ -109,7 +63,10 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("expensesArray", JSON.stringify(expensesArray));
     }
 
-
+    function updateTotal(){
+        totalAmount = calculateTotal();
+        totalAmountDisplay.textContent = totalAmount.toFixed(2);
+    }
 
 
 
