@@ -126,11 +126,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Start Of Result Container
     const resultContainer = document.getElementById("result-container");
-    const score = document.getElementById("score");
+    let score = document.getElementById("score");
     const restartQuizButton = document.getElementById("restart-btn");
     // End Of Result Container
 
-    let curentQuestion = 0;
+    let currentQuestion = 0;
     let defaultScore = 0;
 
     startQuizButton.addEventListener("click", startQuiz);
@@ -146,14 +146,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function showQuestions() {
         nextQuestionButton.classList.add("hidden");
-        questionText.textContent = questions[current]
+        questionText.textContent = questions[currentQuestion].question;
+
+        choicesList.innerHTML = ""; // Clear The Previous Choices
+        questions[currentQuestion].choices.forEach(iterator => {
+           const li = document.createElement("li");
+           li.textContent = iterator;
+
+           li.addEventListener("click", () => selectAnswer(iterator));
+
+           choicesList.appendChild(li);
+        });
     }
 
+    function selectAnswer(choice){
+        const correctAnswer = questions[currentQuestion].answer;
+        if (choice === correctAnswer){
+            defaultScore++;
+        }
+        nextQuestionButton.classList.remove("hidden");
+    }
 
+    nextQuestionButton.addEventListener("click", () => {
+        currentQuestion++;
+        if (currentQuestion < questions.length){
+            showQuestions();
+        }else{
+            showResult();
+        }
+    });
 
+    function showResult(){
+        questionContainer.classList.add("hidden");
+        resultContainer.classList.remove("hidden");
 
+        score.textContent = `${defaultScore} Out Of ${questions.length}`;
+    }
 
-
+    restartQuizButton.addEventListener("click", () => {
+        currentQuestion = 0;
+        defaultScore = 0;
+        resultContainer.classList.add("hidden");
+        startQuiz();
+    });
 
 
 
