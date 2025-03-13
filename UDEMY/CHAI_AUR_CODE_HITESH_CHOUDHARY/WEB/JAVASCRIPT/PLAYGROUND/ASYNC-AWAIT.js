@@ -20,3 +20,5 @@ async function getUserData() {
     }
     
 }
+
+getUserData();
