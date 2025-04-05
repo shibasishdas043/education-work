@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Page Visits: <span id="count">0</span></h1>
+  <button onclick="reset()">Reset</button>
+
+  <script>
+    // Load count from localStorage or start at 0
+    let count = localStorage.getItem('visits') || 0;
+    count++;
+    localStorage.setItem('visits', count);
+    document.getElementById('count').textContent = count;
+
+    function reset() {
+      localStorage.removeItem('visits');
+      location.reload(); // refresh to show updated count
+    }
+  </script>
+</body>
+</html>
