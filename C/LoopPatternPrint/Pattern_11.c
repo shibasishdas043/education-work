@@ -1,10 +1,10 @@
 #include<stdio.h>
 int main(){
     int row;
-    printf("Enter row");
+    printf("Enter row : ");
     scanf("%d",&row);
     int column;
-    printf("Enter column");
+    printf("Enter column : ");
     scanf("%d",&column);
 
     for (int i = 1; i <= row; i++)
