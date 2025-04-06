@@ -1,20 +1,31 @@
 <!DOCTYPE html>
-<html>
-<body>
-  <h1>Page Visits: <span id="count">0</span></h1>
-  <button onclick="reset()">Reset</button>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage</title>
+  </head>
+  <body>
+    <h1>Visits : <span id="span">0</span></h1>
+    <button onclick="increase()">Click</button>
 
-  <script>
-    // Load count from localStorage or start at 0
-    let count = localStorage.getItem('visits') || 0;
-    count++;
-    localStorage.setItem('visits', count);
-    document.getElementById('count').textContent = count;
+    <script>
 
-    function reset() {
-      localStorage.removeItem('visits');
-      location.reload(); // refresh to show updated count
-    }
-  </script>
-</body>
+      let count = 0;
+      let span = document.getElementById("span");
+      let fetch;
+
+      document.addEventListener("DOMContentLoaded", () => {
+        fetch = JSON.parse(localStorage.getItem("count", count));
+      });
+
+      function increase() {
+        count++;
+        let total = count + fetchls;
+        span.innerText = total;
+        localStorage.setItem("count", JSON.stringify(count));
+      }
+      
+    </script>
+  </body>
 </html>
