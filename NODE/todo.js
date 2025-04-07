@@ -20,7 +20,7 @@ function saveTasks(tasks){
 
 function addTask(argument){
     const tasks = loadTask();
-    tasks.push({tasks});
+    tasks.push({argument});
     saveTasks(tasks);
     console.log("Tasks Are Added !", tasks);
 }
