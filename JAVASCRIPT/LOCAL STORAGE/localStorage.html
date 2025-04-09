@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Local Storage</title>
+    <style>
+      h2 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Hello</h2>
+    <script>
+      // localStorage.setItem("name", "Shibasish Das");
+      // const name = localStorage.getItem("name");
+      // console.log(name);
+
+      // const user = {
+      //     name: "Banchod",
+      //     age: 22,
+      //     company: "none",
+      // }
+      // localStorage.setItem("user", JSON.stringify(user));
+      // let data = JSON.parse(localStorage.getItem("user"));
+      // console.log(data.name);
+      // console.log(data.age);
+      // console.log(data.company);
+
+      // let data2 = localStorage.getItem("user");
+      // console.log(data2);
+      // console.log(data2.name);
+      // console.log(data2.age);
+
+      localStorage.setItem("name", "Shibasish Das");
+
+      // Retrieve the value from localStorage
+      let getName1 = localStorage.getItem("name");
+      let getName2 = localStorage.key(0);
+
+      console.log(getName1); // Outputs: Shibasish Das
+      console.log(getName2); // Outputs: Shibasish Das
+    </script>
+  </body>
+</html>
