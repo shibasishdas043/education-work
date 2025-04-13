@@ -1,13 +1,18 @@
-const URl =
-  "https://298b0a71c0881dde04168323716f68e6298b0a71c0881dde04168323716f68e6";
+const fetch = require("node-fetch");
 
-let getFatcs = async () => {
+const url = "https://dad-jokes.p.rapidapi.com/joke/ai/cow";
+const options = {
+  method: "GET",
+  headers: {
+    "x-rapidapi-key": "02fd4a8434mshea69a2a88089109p1bd2d8jsn84832ff058b3",
+    "x-rapidapi-host": "dad-jokes.p.rapidapi.com",
+  },
+};
 
-    console.log("Getting Data ....");
-
-    let response = await fetch(URl);
-    console.log(response); //JSON format
-    let data = await response.json();
-    console.log(data[0].text);
-
+try {
+  const response = await fetch(url, options);
+  const result = await response.text();
+  console.log(result);
+} catch (error) {
+  console.error(error);
 }

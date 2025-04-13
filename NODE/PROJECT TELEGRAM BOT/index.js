@@ -2,7 +2,7 @@
 const { Telegraf } = require("telegraf");
 const { message } = require("telegraf/filters");
 
-//BOT_TOKEN = "7968727999:AAELEaZT-bXe8Dg7AQPq_sfvQZBfFcunv2s";
+BOT_TOKEN = "7968727999:AAELEaZT-bXe8Dg7AQPq_sfvQZBfFcunv2s";
 const bot = new Telegraf(BOT_TOKEN);
 
 bot.start((ctx) =>
