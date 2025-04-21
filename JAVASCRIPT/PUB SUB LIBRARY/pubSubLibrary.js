@@ -14,6 +14,15 @@ class PubSub {
       this.subscribers[event] = [];
     }
     this.subscribers[event].push(callback);
+
+    return () => this.unSubscribe(event, callback);
+  }
+
+  unSubscribe(event, callback) {
+    if (!this.subscribers[event]) return;
+    this.subscribers[event] = this.subscribers[event].filter(
+      (cb) => cb !== callback
+    );
   }
 
   /**
@@ -24,28 +33,30 @@ class PubSub {
   publish(event, data) {
     if (!this.subscribers[event]) return;
 
-    this.subscribers[event].forEach(callback => callback(data));
-        
+    this.subscribers[event].forEach((callback) => callback(data));
   }
 }
 
-
 const pb = new PubSub();
 
+const unsubAirforce1 = pb.subscribe("airforce", (data) =>
+  console.log("Subscrber 1", data)
+);
 
-pb.subscribe("airforce", (data) => console.log("Subscrber 1", data));
+const unsubAirforce2 = pb.subscribe("airforce", (data) =>
+  console.log("Subscrber 2", data)
+);
 
-pb.subscribe("airforce", (data) => console.log("Subscrber 2", data));
-
-pb.subscribe("airforce", (data) => console.log("Subscrber 3", data));
-
-
+const unsubAirforce3 = pb.subscribe("airforce", (data) =>
+  console.log("Subscrber 3", data)
+);
 
 pb.subscribe("new balance", (data) => console.log("Subscrber 1", data));
 
-
-
-pb.publish("airforce", {shoename: "jordan airforce"});
+pb.publish("airforce", { shoename: "jordan airforce" });
 
 pb.publish("new balance", { shoename: "something" });
 
+unsubAirforce1();
+
+pb.publish("airforce", { shoename: "jordan New Stock" });
