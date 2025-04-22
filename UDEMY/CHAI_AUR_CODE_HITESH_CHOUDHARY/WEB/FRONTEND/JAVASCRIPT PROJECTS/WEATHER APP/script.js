@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const API_KEY = "298b0a71c0881dde04168323716f68e6";
+    const API_KEY = "Paste Your Key Here";
 
     const cityInput = document.getElementById("city-input");
     const getWeatherButton = document.getElementById("get-weather-btn");
