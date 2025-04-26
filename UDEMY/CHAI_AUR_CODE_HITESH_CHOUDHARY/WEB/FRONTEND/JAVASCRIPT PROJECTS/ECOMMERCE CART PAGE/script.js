@@ -92,9 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Products List Object
   const products_Object_Array = [
-    { id: 1, name: "product1", price: 100 },
-    { id: 2, name: "product2", price: 200 },
-    { id: 3, name: "product3", price: 300 },
+    { id: 1, name: "Product 1", price: 100 },
+    { id: 2, name: "Product 2", price: 200 },
+    { id: 3, name: "Product 3", price: 300 },
   ];
 
 
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // cartItems.appendChild(totalPrice);
       });
       const totalPriceSpan = document.createElement("h4");
-      totalPriceSpan.innerText = `Total Price : $ ${parseInt(total_Price)}`;
+      totalPriceSpan.innerText = `Total Price : $${parseInt(total_Price)}`;
       cartItems.appendChild(totalPriceSpan);
 
       cartTotal.classList.remove("hidden");
