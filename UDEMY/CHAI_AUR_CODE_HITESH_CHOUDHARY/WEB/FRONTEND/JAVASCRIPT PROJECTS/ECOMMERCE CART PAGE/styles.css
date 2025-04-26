@@ -64,7 +64,7 @@ h2 {
   text-align: right;
 }
 
-#checkout-btn {
+.checkout-btn {
   background-color: #6200ea;
   border: none;
   padding: 10px;
@@ -74,7 +74,7 @@ h2 {
   transition: background-color 0.3s;
 }
 
-#checkout-btn:hover {
+.checkout-btn:hover {
   background-color: #3700b3;
 }
 
