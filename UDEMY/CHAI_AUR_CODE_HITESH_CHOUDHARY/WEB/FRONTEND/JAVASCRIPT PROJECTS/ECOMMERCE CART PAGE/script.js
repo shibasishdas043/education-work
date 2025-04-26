@@ -76,13 +76,18 @@ document.addEventListener("DOMContentLoaded", () => {
   // Dynamically Change Products
   const productList = document.getElementById("product-list");
 
+
   // Items In cart | Cart Is Empty Or Not Notifier Paragraph
   const cartItems = document.getElementById("cart-items");
+
   const emptyCartNotifier = document.getElementById("empty-cart");
+
 
   // Total Cart Items When Empty It's Going To Be Hidden  |  Total Price | Checkout Button
   const cartTotal = document.getElementById("cart-Total");
-  const totalPrice = document.getElementById("total-price");
+
+  // const totalPrice = document.getElementById("total-price");
+
   const checkoutButton = document.getElementById("checkout-btn");
 
   // Products List Object
@@ -91,6 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { id: 2, name: "product2", price: 200 },
     { id: 3, name: "product3", price: 300 },
   ];
+
 
   // Dynamically Show The Products On The Products List Section
   products_Object_Array.forEach((iterator) => {
@@ -147,10 +153,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         cartItems.appendChild(cartItem);
 
-        totalPrice.innerText = `$${total_Price.toFixed(2)}`;
+        // totalPrice.innerText = `$${total_Price.toFixed(2)}`;
 
-    });
-    cartTotal.classList.remove("hidden");
+        // cartItems.appendChild(totalPrice);
+      });
+      const totalPriceSpan = document.createElement("h4");
+      totalPriceSpan.innerText = `Total Price : $ ${parseInt(total_Price)}`;
+      cartItems.appendChild(totalPriceSpan);
+
+      cartTotal.classList.remove("hidden");
     } else {
       totalPrice.textContent = `$0.00`;
     }
@@ -176,4 +187,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     render_Cart();
   });
+
 });
