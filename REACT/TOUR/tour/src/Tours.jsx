@@ -1,4 +1,8 @@
-function Tours(tours){
+import Card from "./Card"
+import Cities from "./Cities"
+
+
+function Tours(tours, removeTour){
     return (
       <div>
         <div>
@@ -8,7 +12,7 @@ function Tours(tours){
             {
                 tours.map(
                     (tour) => {
-                        return <Card {...tour}></Card>
+                        return <Card {...tour} removeTour={removeTour}></Card>
                     } 
                 )
             }
