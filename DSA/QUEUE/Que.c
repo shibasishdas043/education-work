@@ -21,7 +21,7 @@ void insert_To_Que(int value) {
 }
 
 void delete_Que() {
-    if (front == -1) {
+    if (front == -1) {B
         printf("Que Is Underflow !");
         return;
     }

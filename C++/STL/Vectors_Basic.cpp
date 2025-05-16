@@ -1,28 +1,83 @@
 #include <iostream>
-using namespace std;
-#include<vector>
-int main(){
-    vector<int> vec;
-    vec.push_back(10);
-    vec.push_back(20);
-    vec.push_back(90);
-    vec.push_back(80);
-    vec.push_back(70);
-    vec.push_back(50);
-    vec.push_back(40);
-    // for (auto x: vec){
-    //     cout<<" "<<x;
-    // }
-    vector<int> vec1(10,10);
-    // for(auto x: vec1){
-    //     cout<<" "<<x;
-    // }
-    vector<int> vec2{10,20,30,40,50,60,70,80,90,100};
-    // for(auto x: vec2){
-    //     cout<<" "<<x;
-    // }
-    
-    return 0;
-}    
- 
+#include<map>
+#include<algorithm>
+#include<bits/stdc++.h>
 
+using namespace std;
+
+int main()
+{
+
+    // map<string, int> age;
+
+    // age["Alice"] = 25;
+    // age["Bob1"] = 50;
+    // age["Bob2"] = 70;
+    // age["Bob3"] = 40;
+    // age["Bob4"] = 90;
+
+    // for (auto iterator : age)
+    // {
+    //     cout<<iterator.first<<" -> "<<iterator.second<<", ";
+    // }
+
+    map<string, int> data;
+
+    string str;
+    int value;
+
+    for (auto i : data)
+    {   
+        if (data.size() < 3)
+        {
+            cout<<"Enter The Name";
+            cin>>str;
+
+            data.push(str);
+
+            cout<<
+
+        }
+        
+
+
+
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
