@@ -10,7 +10,9 @@
       <module fileurl="file://$PROJECT_DIR$/Inhearitance/Inhearitance.iml" filepath="$PROJECT_DIR$/Inhearitance/Inhearitance.iml" />
       <module fileurl="file://$PROJECT_DIR$/Overloading/Overloading.iml" filepath="$PROJECT_DIR$/Overloading/Overloading.iml" />
       <module fileurl="file://$PROJECT_DIR$/Overriding/Overriding.iml" filepath="$PROJECT_DIR$/Overriding/Overriding.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Polymorphism/Polymorphism.iml" filepath="$PROJECT_DIR$/Polymorphism/Polymorphism.iml" />
       <module fileurl="file://$PROJECT_DIR$/Product/Product.iml" filepath="$PROJECT_DIR$/Product/Product.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RuntimePolymorphism/RuntimePolymorphism.iml" filepath="$PROJECT_DIR$/RuntimePolymorphism/RuntimePolymorphism.iml" />
       <module fileurl="file://$PROJECT_DIR$/StaticDemo/StaticDemo.iml" filepath="$PROJECT_DIR$/StaticDemo/StaticDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/UseData/UseData.iml" filepath="$PROJECT_DIR$/UseData/UseData.iml" />
       <module fileurl="file://$PROJECT_DIR$/UseMyMath/UseMyMath.iml" filepath="$PROJECT_DIR$/UseMyMath/UseMyMath.iml" />
