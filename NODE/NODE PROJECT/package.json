@@ -1,0 +1,12 @@
+{
+  "name": "node-project",
+  "version": "1.0.0",
+  "description": "project management application for beginners",
+  "license": "ISC",
+  "author": "Shibasish Das",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node index.js"
+  }
+}
