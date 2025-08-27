@@ -1,5 +1,5 @@
 
-function Card({id, image, name, country, population, area, removeTour}) {
+function Card({id, image, name, country, population, removeTour}) {
 
     return (
         <div className={"Card"}>
