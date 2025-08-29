@@ -3,9 +3,7 @@ import './App.css'
 import Testimonial from "./Component/Testimonial.jsx";
 import {review} from "./Component/Data.jsx";
 
-
 function App() {
-
 
     return (
         <div className={"flex flex-col w-[100vw] h-[100vh] justify-center items-center bg-gray-200"}>
