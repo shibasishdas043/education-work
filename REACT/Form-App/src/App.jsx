@@ -1,27 +1,14 @@
-import { useState } from 'react'
-
 import './App.css'
+import Details from "./Component/Details.jsx";
+import {Routes, Route, Link} from "react-router-dom";
 
 function App() {
-  const [formData, setFormdata] = useState({
-      firstName:"",
-  });
 
-  function changeHandler(event){
-      const {name, value, checked, type} = event.target;
-      setFormdata((prev) => {
-          (...prev, [name]=value)
-      });
-
-  }
-
-  return (
-      <div>
-          <form action="">
-              <input type="text" name={"firstName"} id={"firstName"} placeholder={"love"} value={formData.firstName} onChange={changeHandler}/>
-          </form>
-      </div>
-  )
+    return (
+        <div>
+            <Details/>
+        </div>
+    )
 }
 
 export default App
