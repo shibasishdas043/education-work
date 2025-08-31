@@ -4,8 +4,8 @@ function SubmitButton(boolValue) {
     const [submit, setSubmit] = useState("Submit Now");
 
     function submitted(event) {
-        setSubmit("Submitted");
         event.preventDefault();
+        setSubmit("Submitted");
         
         boolValue.onSend(true);
     }
