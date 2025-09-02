@@ -33,7 +33,7 @@ function Navbar(props) {
 
             <div className={"flex ml-5 mr-3 gap-5"}>
                 {!isLoggedIn &&
-                    <Link to={"/Login"}>
+                    <Link to={"/LoginForm"}>
                         <button>
                             Login
                         </button>
@@ -50,7 +50,7 @@ function Navbar(props) {
                     </Link>
                 }
                 {!isLoggedIn &&
-                    <Link to={"/Signup"}>
+                    <Link to={"/SignupForm"}>
                         <button>
                             Signup
                         </button>
