@@ -8,7 +8,7 @@ function Signup({setIsLoggedIn}) {
             desc1={"Build Your Own Future On Your Hand"}
             desc2={"Make Money On Your Own to hit Big"}
             image={signup}
-            formtype={"signup"}
+            formType={"signup"}
             setIsLoggedIn={setIsLoggedIn}
         />
     )

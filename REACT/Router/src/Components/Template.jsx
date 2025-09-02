@@ -1,9 +1,8 @@
-import login from "../Assets/login.jpg";
 import LoginForm from "./LoginForm.jsx";
 import SignupForm from "./SignupForm.jsx";
 
 
-function Template({title, desc1, desc2, img, formtype,  setLoggedIn}){
+function Template({title, desc1, desc2, image, formType,  setIsLoggedIn}){
     return(
         <div>
             <div>
@@ -13,7 +12,7 @@ function Template({title, desc1, desc2, img, formtype,  setLoggedIn}){
                     <span>{desc2}</span>
                 </p>
 
-                {formtype === "SignupForm" ? (<SignupForm/>) : (<LoginForm/>)}
+                {formType === "signup" ? (<SignupForm setIsLoggedIn={setIsLoggedIn}/>) : (<LoginForm setIsLoggedIn={setIsLoggedIn}/>)}
 
                 <div>
                     <div></div>
@@ -25,8 +24,7 @@ function Template({title, desc1, desc2, img, formtype,  setLoggedIn}){
             </div>
             
             <div>
-                <img src={login} alt="login" width={558} height={584} loading={"lazy"}/>
-                img
+                <img src={image} alt="login" width={558} height={584} loading={"lazy"}/>
             </div>
         </div>
     )

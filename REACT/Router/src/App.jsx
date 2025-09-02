@@ -18,9 +18,9 @@ function App() {
 
             <Routes>
                 <Route path={"/"} element={<Home/>}/>
-                <Route path={"LoginForm"} element={<Login/>}/>
-                <Route path={"SignupForm"} element={<Signup/>}/>
-                <Route path={"Dashboared"} element={<Dashboared/>}/>
+                <Route path={"/Login"} element={<Login setIsLoggedIn={setIsLoggedIn}/>}/>
+                <Route path={"/Signup"} element={<Signup/>}/>
+                <Route path={"/Dashboared"} element={<Dashboared/>}/>
             </Routes>
 
         </div>
