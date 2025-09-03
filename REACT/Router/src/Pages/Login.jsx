@@ -5,8 +5,8 @@ function Login({setIsLoggedIn}) {
     return (
         <Template
             title={"Welcome Back"}
-            desc1={"Build Your Own Future"}
-            desc2={"Make Money On Your Own"}
+            desc1={`"Build Your Own Future"`}
+            desc2={`"Make Money On Your Own"`}
             image={login}
             formType={"login"}
             setIsLoggedIn={setIsLoggedIn}
