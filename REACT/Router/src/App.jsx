@@ -12,15 +12,20 @@ function App() {
 
 
     return (
-        <div>
-            <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+        <div className = {"w-screen h-screen bg-blue-950"}>
+            <Navbar isLoggedIn = {isLoggedIn}
+                    setIsLoggedIn = {setIsLoggedIn}/>
 
 
             <Routes>
-                <Route path={"/"} element={<Home/>}/>
-                <Route path={"/Login"} element={<Login setIsLoggedIn={setIsLoggedIn}/>}/>
-                <Route path={"/Signup"} element={<Signup/>}/>
-                <Route path={"/Dashboared"} element={<Dashboared/>}/>
+                <Route path = {"/"}
+                       element = {<Home/>}/>
+                <Route path = {"/Login"}
+                       element = {<Login setIsLoggedIn = {setIsLoggedIn}/>}/>
+                <Route path = {"/Signup"}
+                       element = {<Signup setIsLoggedIn = {setIsLoggedIn}/>}/>
+                <Route path = {"/Dashboared"}
+                       element = {<Dashboared/>}/>
             </Routes>
 
         </div>

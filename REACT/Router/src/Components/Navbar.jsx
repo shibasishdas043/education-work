@@ -12,36 +12,40 @@ function Navbar(props) {
 
 
     return (
-        <div className={"flex justify-evenly"}>
-            <Link to={"/"}>
-                <img src={Logo} alt="Solana" width={40} height={30} loading={"lazy"}/>
+        <div className = {"flex justify-between items-center w-11/12 max-w-[1160px] py-4 mx-auto"}>
+            <Link to = {"/"}>
+                <img src = {Logo}
+                     alt = "Solana"
+                     width = {40}
+                     height = {30}
+                     loading = {"lazy"}/>
             </Link>
 
-            <nav className={"flex"}>
-                <ul className={"flex gap-3 "}>
+            <nav>
+                <ul className = {"flex gap-x-6 text-blue-100"}>
                     <li>
-                        <Link to={"/"}>Home</Link>
+                        <Link to = {"/"}>Home</Link>
                     </li>
                     <li>
-                        <Link to={"/"}>About</Link>
+                        <Link to = {"/"}>About</Link>
                     </li>
                     <li>
-                        <Link to={"/"}>Contact</Link>
+                        <Link to = {"/"}>Contact</Link>
                     </li>
                 </ul>
             </nav>
 
-            <div className={"flex ml-5 mr-3 gap-5"}>
+            <div className = {"flex items-center gap-x-4"}>
                 {!isLoggedIn &&
-                    <Link to={"/Login"}>
-                        <button>
-                            Login
+                    <Link to = {"/Login"}>
+                        <button className={"text-blue-100 bg-blue-600 py-[8px] px-[12px] rounded-[8px] border border-blue-800"}>
+                            Log In
                         </button>
                     </Link>
                 }
                 {isLoggedIn &&
-                    <Link to={"/"}>
-                        <button onClick={() => {
+                    <Link to = {"/"}>
+                        <button className={"text-blue-100 bg-blue-600 py-[8px] px-[12px] rounded-[8px] border border-blue-800"} onClick = {() => {
                             setIsLoggedIn(false);
                             toast.success("Logged Out");
                         }}>
@@ -50,15 +54,15 @@ function Navbar(props) {
                     </Link>
                 }
                 {!isLoggedIn &&
-                    <Link to={"/Signup"}>
-                        <button>
-                            Signup Now
+                    <Link to = {"/Signup"}>
+                        <button className={"text-blue-100 bg-blue-600 py-[8px] px-[12px] rounded-[8px] border border-blue-800"}>
+                            SignUp Now
                         </button>
                     </Link>
                 }
                 {isLoggedIn &&
-                    <Link to={"/Dashboared"}>
-                        <button>
+                    <Link to = {"/Dashboared"}>
+                        <button className={"text-blue-100 bg-blue-600 py-[8px] px-[12px] rounded-[8px] border border-blue-800"}>
                             Dashboared
                         </button>
                     </Link>
