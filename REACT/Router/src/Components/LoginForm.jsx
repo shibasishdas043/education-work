@@ -71,7 +71,7 @@ function LoginForm({setIsLoggedIn}) {
 
 
                 <Link to = {"#"}>
-                    <p className={"text-xs mt-1 text-blue-400 w-max ml-auto cursor-pointer"}>Forgot Password</p>
+                    <p className = {"text-xs mt-1 text-blue-400 w-max ml-auto cursor-pointer"}>Forgot Password</p>
                 </Link>
             </label>
 

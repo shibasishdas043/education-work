@@ -21,7 +21,7 @@ function Template({title, desc1, desc2, image, formType, setIsLoggedIn}) {
                     <div className = {"w-full h-[1px] bg-blue-400"}></div>
                 </div>
                 <button className = {"w-full flex justify-center items-center rounded-[8px] font-medium text-cyan-100 border border-cyan-600 px-[12px]" +
-                    " py-[8px] gap-x-2 mt-6]"}>
+                    " py-[8px] gap-x-2 mt-6] hover:border-blue-400 transition delay-100 duration-500 cursor-pointer hover:text-white"}>
                     <FcGoogle/>
                     <p>SignUp With Google</p>
                 </button>

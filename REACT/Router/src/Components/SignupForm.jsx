@@ -40,52 +40,89 @@ function SignupForm({setIsLoggedIn}) {
         let accData = {
             ...formData,
         }
+
+        const finalData={
+            ...accData,
+            accType,
+        }
+
         console.log("Print acc Data");
         console.log(accData);
+        console.log("Print accType Data");
+        console.log(finalData);
 
         navigate("/Dashboared");
     }
 
+    const [accType, setAccType] = useState("Student");
+
     return (
         <div>
-            <div>
-                <button>
+            <div className = {"flex rounded-full border-1 border-pink-500  bg-blue-800 p-1 gap-1 my-6 max-w-max hover:border-teal-500 transition-transform" +
+                " delay-100" +
+                " duration-500"}>
+                <button className = {`${accType === "Student" ? "bg-blue-950 text-white" : "bg-blue-800 text-blue-300"} py-2 px-5  rounded-full transition-transform delay-100 duration-500`}
+                        onClick = {() => {
+                            setAccType("Student");
+                        }}>
                     Student
                 </button>
 
-                <button>
+                <button className = {`${accType === "Instructor" ? "bg-blue-950 text-white" : "bg-blue-800 text-blue-300"} py-2 px-5  rounded-full transform delay-100 duration-500`}
+                        onClick = {() => {
+                            setAccType("Instructor");
+                        }}>
                     Instructor
                 </button>
             </div>
 
             <form onSubmit = {submitHandler}>
-                <div>
-                    <p>First Name <sup>*</sup></p>
-                    <label>
-                        <input type = "text"
-                               placeholder = {"Enter First Name"}
-                               name = {"firstName"}
-                               value = {formData.firstName}
-                               onChange = {changeHandler}
-                               required
-                        />
-                    </label>
+                <div className = {"md:w-full md:flex md:flex-col lg:flex lg:flex-row lg:gap-1 lg:w-full"}>
+                    <div className = {"lg:w-full"}>
+                        <p className = {"text-[0.875rem] text-cyan-100 mb-1 leading-[1.375rem]"}>First Name <sup className = {"text-red-500"}>*</sup></p>
+                        <label>
+                            <input className = {"bg-blue-900 rounded-[0.5rem] outline-blue-400 text-blue-50 font-semibold w-full p-[6px] border-2" +
+                                " border-blue-700" +
+                                " hover:border-blue-500" +
+                                " transition-all delay-100 duration-300 focus:bg-blue-200 focus:text-black cursor-pointer" +
+                                ""}
+                                   type = "text"
+                                   placeholder = {"Enter First Name"}
+                                   name = {"firstName"}
+                                   value = {formData.firstName}
+                                   onChange = {changeHandler}
+                                   required
+                            />
+                        </label>
+                    </div>
 
-                    <p>Last Name <sup>*</sup></p>
-                    <label>
-                        <input type = "text"
-                               placeholder = {"Enter Last Name"}
-                               name = {"lastName"}
-                               value = {formData.lastName}
-                               onChange = {changeHandler}
-                               required/>
-                    </label>
+                    <div className = {"lg:w-full"}>
+                        <p className = {"text-[0.875rem text-cyan-100 mb-1 leading-[1.375rem]"}>Last Name <sup className = {"text-red-500"}>*</sup></p>
+                        <label>
+                            <input className = {"bg-blue-900 rounded-[0.5rem] outline-blue-400 text-blue-50 font-semibold w-full p-[6px] border-2" +
+                                " border-blue-700" +
+                                " hover:border-blue-500" +
+                                " transition-all delay-100 duration-300 focus:bg-blue-200 focus:text-black cursor-pointer" +
+                                ""}
+                                   type = "text"
+                                   placeholder = {"Enter Last Name"}
+                                   name = {"lastName"}
+                                   value = {formData.lastName}
+                                   onChange = {changeHandler}
+                                   required/>
+                        </label>
+                    </div>
+
                 </div>
 
                 <div>
-                    <p>Email Address <sup>*</sup></p>
+                    <p className = {"text-[0.875rem text-cyan-100 mb-1 leading-[1.375rem]"}>Email Address <sup className = {"text-red-500"}>*</sup></p>
                     <label>
-                        <input type = "text"
+                        <input className = {"bg-blue-900 rounded-[0.5rem] outline-blue-400 text-blue-50 font-semibold w-full p-[6px] border-2 border-blue-700" +
+                            " hover:border-blue-500" +
+                            " transition-all delay-100 duration-300 focus:bg-blue-200 focus:text-black cursor-pointer" +
+                            ""}
+                               type = "text"
                                placeholder = {"Enter Email"}
                                name = {"email"}
                                value = {formData.email}
@@ -95,32 +132,65 @@ function SignupForm({setIsLoggedIn}) {
                 </div>
 
                 <div>
-                    <p>Create Password <sup>*</sup></p>
-                    <label>
-                        <input type = {showPasswordFirstField ? ("text") : ("password")}
-                               placeholder = {"Enter Your Password"}
-                               name = {"password"}
-                               value = {formData.password}
-                               onChange = {changeHandler}
-                               required
-                        />
-                        <span onClick = {() => setShowPasswordFirstField((prev) => !prev)}>{showPasswordFirstField ? (<AiOutlineEyeInvisible/>) : (
-                            <AiOutlineEye/>)}</span>
-                    </label>
+                    <div className = {"gap-x-1 flex flex-col lg:flex-row"}>
+                        {/*create Password*/}
+                        <div className = {"md:w-full"}>
+                            <p className = {"text-[0.875rem text-cyan-100 mb-1 leading-[1.375rem]"}>Create Password <sup className = {"text-red-500"}>*</sup>
+                            </p>
+                            <label className = {"md:w-full relative"}>
+                                <input className = {"md:w-full bg-blue-900 rounded-[0.5rem] outline-blue-400 text-blue-50 font-semibold  p-[6px]" +
+                                    " border-2" +
+                                    " border-blue-700" +
+                                    " hover:border-blue-500" +
+                                    " transition-all delay-100 duration-300 focus:bg-blue-200 focus:text-black cursor-pointer" +
+                                    ""}
+                                       type = {showPasswordFirstField ? ("text") : ("password")}
+                                       placeholder = {"Enter Your Password"}
+                                       name = {"password"}
+                                       value = {formData.password}
+                                       onChange = {changeHandler}
+                                       required
+                                />
+                                <span className = {"absolute right-3 top-[3.5px] cursor-pointer"}
+                                      onClick = {() => setShowPasswordFirstField((prev) => !prev)}>{showPasswordFirstField ? (
+                                    <AiOutlineEyeInvisible fontSize = {18}
+                                                           fill = "#2563EB"/>) : (
+                                    <AiOutlineEye fontSize = {18}
+                                                  fill = "#2563EB"/>)}</span>
+                            </label>
+                        </div>
+                        {/*confirm Password*/}
+                        <div className = {"md:w-full"}>
+                            <p className = {"text-[0.875rem text-cyan-100 mb-1 leading-[1.375rem]"}>Confirm Password <sup className = {"text-red-500"}>*</sup>
+                            </p>
+                            <label className = {"md:w-full relative"}>
+                                <input className = {"md:w-full bg-blue-900 rounded-[0.5rem] outline-blue-400 text-blue-50 font-semibold p-[6px] border-2" +
+                                    " border-blue-700" +
+                                    " hover:border-blue-500" +
+                                    " transition-all delay-100 duration-300 focus:bg-blue-200 focus:text-black cursor-pointer " +
+                                    ""}
+                                       type = {showPasswordSecondField ? ("text") : ("password")}
+                                       placeholder = {"Confirm Your Password"}
+                                       name = {"confirmPassword"}
+                                       value = {formData.confirmPassword}
+                                       onChange = {changeHandler}
+                                       required
+                                />
+                                <span className = {"absolute right-3 top-[3.5px] cursor-pointer"}
+                                      onClick = {() => setShowPasswordSecondField((prev) => !prev)}>{showPasswordSecondField ? (
+                                    <AiOutlineEyeInvisible fontSize = {18}
+                                                           fill = "#2563EB"/>) : (
+                                    <AiOutlineEye fontSize = {18}
+                                                  fill = "#2563EB"/>)}</span>
+                            </label>
+                        </div>
+                    </div>
 
-                    <p>Confirm Password <sup>*</sup></p>
-                    <label>
-                        <input type = {showPasswordSecondField ? ("text") : ("password")}
-                               placeholder = {"Confirm Your Password"}
-                               name = {"confirmPassword"}
-                               value = {formData.confirmPassword}
-                               onChange = {changeHandler}
-                               required
-                        />
-                        <span onClick = {() => setShowPasswordSecondField((prev) => !prev)}>{showPasswordSecondField ? (<AiOutlineEyeInvisible/>) : (
-                            <AiOutlineEye/>)}</span>
-                    </label>
-                    <button>Create Account</button>
+                    <button className = {"w-full bg-pink-600 hover:bg-pink-800 transition delay-100 duration-500 font-medium text-blue-200 rounded-[8px]" +
+                        " px-[12px] py-[8px]" +
+                        " mt-6 " +
+                        " cursor-pointer hover:text-white"}>Create Account
+                    </button>
                 </div>
 
             </form>
