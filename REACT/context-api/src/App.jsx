@@ -1,12 +1,16 @@
-import {useState} from 'react'
+import {useContext, useEffect, useState} from 'react'
 import './App.css'
 import Header from "./Components/Header.jsx";
 import Blogs from "./Components/Blogs.jsx";
 import Pagenation from "./Components/Pagenation.jsx";
+import {AppContext} from "./Components/AppContext.jsx";
 
 function App() {
-    const [count, setCount] = useState(0)
+    const {fetchBlogPosts} = useContext(AppContext);
 
+    useEffect(() => {
+        fetchBlogPosts();
+    }, []);
 
     return (
         <div>
