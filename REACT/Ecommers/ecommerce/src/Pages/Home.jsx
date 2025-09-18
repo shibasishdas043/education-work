@@ -30,10 +30,11 @@ function Home() {
     }, []);
 
     return (
-        <div>
+        <div className={"flex justify-center items-center"}>
             {
                 loading ? (<Spinner/>) : (posts.length > 0 ? (
-                        <div className = {"grid grid-cols-4 max-w-6xl p-2 max-auto space-y-10 space-x-5 min-h-[80vh]"}>
+                        <div className = {"grid xs:grid-col-1 sm:grid-col-2 md:grid-col-3 lg:grid-cols-4 max-w-6xl p-2 max-auto space-y-10 space-x-5" +
+                            " min-h-[80vh]"}>
                             {
                                 posts.map((post) => <Product key = {post.id}
                                                              post = {post}/>)
