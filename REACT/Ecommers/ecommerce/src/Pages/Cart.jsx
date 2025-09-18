@@ -3,6 +3,7 @@ import {NavLink} from "react-router-dom";
 import CartItem from "../Components/CartIttem.jsx";
 import {useEffect, useState} from "react";
 
+
 function Cart() {
 
     const {cart} = useSelector((state) => state);
@@ -16,10 +17,12 @@ function Cart() {
         }, [cart]
     );
 
+    console.log(cart);
+
     return (
         <div>
             {
-                cart.length > 0 ? (
+                (cart.length > 0) ? (
                     <div>
                         <div>
                             {
@@ -54,7 +57,6 @@ function Cart() {
                             <button>Shop Now</button>
                         </NavLink>
                     </div>
-
                 )
             }
         </div>
