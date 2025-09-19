@@ -5,6 +5,8 @@ public class UseCircle {
 //        Circle p = new Circle(101);
 //
 //        p.show();
+        Honda c = new Honda();
+        c.tpSpeed();
 
         Honda cbz = new Honda();
         cbz.tpSpeed();
