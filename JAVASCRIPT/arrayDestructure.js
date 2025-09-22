@@ -7,3 +7,7 @@ let brr = arr;
 console.log(brr);
 console.log(deArray1);
 console.log(deArray2);
+
+
+console.log(arr);
+console.log(deArray1);

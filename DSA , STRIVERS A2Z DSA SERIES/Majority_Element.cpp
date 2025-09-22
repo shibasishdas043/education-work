@@ -1,4 +1,5 @@
 #include <iostream>
+#include<vector>
 using namespace std;
 int main(){
     int a[] = {2,2,2,0,3,3,1,1,2};
@@ -23,8 +24,8 @@ int main(){
     else{
         cout<<"NULL !";
     }
+
     
 
-
-return 0;
+    return 0;
 }
