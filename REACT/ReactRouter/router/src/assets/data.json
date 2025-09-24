@@ -1,0 +1,28 @@
+{
+  "jobs": [
+    {
+      "id": 1,
+      "title": "React",
+      "salary": 100000000,
+      "location": "London"
+    },
+    {
+      "id": 2,
+      "title": "Front",
+      "salary": 200000000,
+      "location": "USA"
+    },
+    {
+      "id": 3,
+      "title": "Dev",
+      "salary": 300000000,
+      "location": "China"
+    },
+    {
+      "id": 4,
+      "title": "Vite",
+      "salary": 400000000,
+      "location": "Japan"
+    }
+  ]
+}

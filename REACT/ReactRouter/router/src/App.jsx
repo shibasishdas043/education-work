@@ -17,6 +17,8 @@ import ContactLayout from "./layout/ContactLayout";
 import ContactInfo from "./components/ContactInfo";
 import ContactForm from './components/ContactForm';
 import NotFound from "./components/NotFound";
+import JobsLayout from "./layout/JobsLayout";
+import Jobs, { JobsLoader } from "./pages/Jobs";
 
 function App() {
 
@@ -33,7 +35,10 @@ function App() {
           <Route path="ContactInfo" element={<ContactInfo />} />
           <Route path="ContactForm" element={<ContactForm />} />
         </Route>
-        <Route path="*" element={<NotFound/>}/>
+        <Route path="Jobs" element={<JobsLayout />}>
+          <Route index element={<Jobs/>} loader={JobsLoader}/>
+        </Route>
+        <Route path="*" element={<NotFound />} />
       </Route>
     )
   );
