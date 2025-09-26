@@ -2,13 +2,13 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 export const NotFound = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <div>
-          <h2>404 Page Not Found</h2>
-          <br />
-          <button onClick={() => navigate('/')}>Go To Home</button>
+      <h2>404 Page Not Found</h2>
+      <br />
+      <button onClick={() => navigate("/")}>Go To Home</button>
     </div>
   );
 };
