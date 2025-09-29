@@ -1,11 +1,12 @@
-import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import { contextApi } from "../context/context";
 
 const Storage = () => {
-  const {data}  = useParams();
+  const { arr } = useContext(contextApi);
 
   return (
     <div>
-      <h1>Data : {data}</h1>
+      <h1>Data : {arr[0]}</h1>
     </div>
   );
 };
