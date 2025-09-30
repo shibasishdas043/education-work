@@ -1,17 +1,19 @@
-import React, { useContext } from "react";
+// import React, { useContext } from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { contextApi } from "../context/context";
+// import { contextApi } from "../context/context";
+import useStore  from "../store/store";
 
 const Form = () => {
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState([]);
-  const { arr, setArr } = useContext(contextApi);
+  // const { arr, setArr } = useContext(contextApi);
+
+  const { setPageData } = useStore();
 
   useEffect(() => {
-    console.log(inputValue, arr);
-  }, [inputValue, arr]);
-  
+    console.log(inputValue);
+  }, [inputValue]);
 
   return (
     <div className="mt-1 ml-1">
@@ -24,7 +26,7 @@ const Form = () => {
             id="input"
             placeholder="Write Here"
             onChange={(event) => {
-              setInputValue([event.target.value])
+              setInputValue([event.target.value]);
             }}
           />
           <label htmlFor="input">Input Section</label>
@@ -34,7 +36,8 @@ const Form = () => {
           type="button"
           className="border rounded cursor-pointer"
           onClick={() => {
-            setArr([inputValue]);
+            // setArr([inputValue]);
+            setPageData([inputValue]);
             navigate(`/Storage`);
           }}
         >

@@ -21,7 +21,7 @@ function App() {
   // }, [change])
 
 
-  const [arr, setArr] = useState([]);
+  // const [arr, setArr] = useState([]);
 
 
   return (
@@ -30,12 +30,12 @@ function App() {
 
     <div className="p-1">
       {/* <button className='border p-1' onClick={()=> setChange(Math.round (Math.random()*Math.random()*20))}> CLick Me : {change}</button> */}
-      <contextApi.Provider value={{arr, setArr}}>
+      {/* <contextApi.Provider value={{arr, setArr}}> */}
         <Routes>
           <Route path="/" element={<Form />} />
           <Route path="/Storage" element={<Storage />} />
         </Routes>
-      </contextApi.Provider>
+      {/* </contextApi.Provider> */}
     </div>
   );
 }
