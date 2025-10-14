@@ -1,4 +1,3 @@
-// import { useEffect, useState } from "react";
 // import "./App.css";
 // import Form from "./pages/Form";
 // import Storage from "./pages/Storage";
@@ -38,22 +37,59 @@
 
 // export default App;
 
-import React from "react";
-import "./App.css"
-import { Route, Routes } from "react-router-dom";
-import PageOne from "./pages/PageOne";
-import PageTwo from "./pages/PageTwo";
+// import { Route, Routes } from "react-router-dom";
+// import PageOne from "./pages/PageOne";
+// import PageTwo from "./pages/PageTwo";
+
+// const App = () => {
+//   return (
+//     <div className="text-black">
+
+//       <Routes>
+//         <Route path="/" element={<PageOne />} />
+//         <Route path="/pagetwo" element={<PageTwo />} />
+//       </Routes>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+import React, { useRef } from "react";
+import { useEffect, useState } from "react";
+import "./App.css";
 
 const App = () => {
+
+  const refRence = useRef("input");
+
+  function focus() {
+    refRence.current.classList.contains("hidden")
+      ?refRence.current.classList.remove("hidden"):refRence.current.classList.add("hidden");
+    
+  }
+
+
+
   return (
-    <div className="text-black">
-      
-      <Routes>
-        <Route path="/" element={<PageOne />} />
-        <Route path="/pagetwo" element={<PageTwo />} />
-      </Routes>
+    <div className="m-3">
+      <span>
+        <input
+          ref={refRence}
+          type="text"
+          className="border-[1px]  m-2 hidden"
+        />
+        <button
+          onClick={focus}
+          className="border-[1px] p-1"
+        >
+          Click
+        </button>
+      </span>
     </div>
   );
 };
 
 export default App;
+
+
