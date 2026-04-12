@@ -7,7 +7,7 @@ const PORT = 3000;
 //this function returns a server object, and takes a callback as an argument
 
 //this function created a server object but didn't start the server
-const server = http.createServer(function listener(request, response) {
+const server = http.createServer(async function listener(request, response) {
   //request ---> using request we will be see the details of incoming http request --> Object
 
   //response--->we will be able to configure what response we nees to send for an incoming http request --> Object
@@ -16,10 +16,14 @@ const server = http.createServer(function listener(request, response) {
 
   //that is going to collect every http request that we will make to our server
 
-  if (request.url=='/home') {
+  if (request.url=='/google') {
     //if we make a request on /home this block will be executed
-    console.log(request.method);
-    response.end('Welcome To Home');
+    const response = await fetch("https://www.google.com");
+
+    const html = await response.text();
+
+    console.log(html);
+
   }
 
   console.log("Request Recieved");
