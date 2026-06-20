@@ -1,0 +1,48 @@
+CREATE DATABASE db1;
+USE db1;
+ 
+CREATE TABLE cse(
+id INT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(30) NOT NULL,
+email VARCHAR(30) UNIQUE NOT NULL,
+gender ENUM("Male", "Female", "Other"),
+dob DATE,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+SELECT * FROM user;
+
+RENAME TABLE cse TO user;
+
+-- DROP DATABASE db1;
+
+ALTER TABLE user ADD COLUMN is_active BOOLEAN DEFAULT true;
+
+ALTER TABLE user DROP COLUMN is_active;
+
+SELECT * FROM user ;
+
+ALTER TABLE user MODIFY COLUMN name VARCHAR(150);
+
+ALTER TABLE user MODIFY COLUMN name VARCHAR(150) AFTER email;
+
+ALTER TABLE user MODIFY COLUMN created_at BOOLEAN DEFAULT true FIRST;
+
+INSERT INTO user VALUES 
+(1, 'Alice', 'alice@example.com', 'Female', '1995-05-14');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

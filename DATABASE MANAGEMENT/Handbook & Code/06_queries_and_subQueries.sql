@@ -1,0 +1,56 @@
+CREATE DATABASE Emp;
+USE Emp;
+
+CREATE TABLE Emp(
+	E_id INT UNIQUE NOT NULL PRIMARY KEY,
+    E_name VARCHAR(30),
+    Dept VARCHAR(10),
+    Salary INT
+);
+
+INSERT INTO Emp VALUES(1, 'Ram', 'HR', 100000);
+INSERT INTO Emp VALUES(2, 'Ravi', 'IT', 200000);
+INSERT INTO Emp VALUES(3, 'Nitin', 'MRKT', 300000);
+INSERT INTO Emp VALUES(4, 'Varun', 'HR', 400000);
+INSERT INTO Emp VALUES(5, 'Amrit', 'IT', 500000);
+INSERT INTO Emp VALUES(6, 'Shyam', 'MRKT', 200000);
+
+CREATE TABLE Emp2(
+	E_id INT PRIMARY KEY UNIQUE NOT NULL,
+    E_name VARCHAR(20) NOT NULL,
+    Address VARCHAR(30) NOT NULL
+);
+
+INSERT INTO Emp2 VALUES(1, 'Nitin', 'Bangaluru');
+INSERT INTO Emp2 VALUES(2, 'Varun', 'Pune');
+INSERT INTO Emp2 VALUES(3, 'Amrit', 'Mumbai');
+INSERT INTO Emp2 VALUES(4, 'Shyam', 'Hydrabad');
+INSERT INTO Emp2 VALUES(5, 'Ram', 'Chennai');
+
+SELECT * FROM Emp2;
+
+CREATE TABLE Project(
+	E_id INT UNIQUE NOT NULL,
+    P_id VARCHAR(4) NOT NULL,
+    P_name VARCHAR(10) NOT NULL,
+    Location VARCHAR(10) NOT NULL,
+    FOREIGN KEY (E_id) REFERENCES Emp2(E_id)
+);
+
+INSERT INTO Project VALUES(1, 'P1', 'IOT', 'Bangaluru');
+INSERT INTO Project VALUES(5, 'P2', 'BIG DATA', 'Delhi');
+INSERT INTO Project VALUES(3, 'P3', 'RETAIL', 'Mubai');
+INSERT INTO Project VALUES(4, 'P4', 'ANDROID', 'Hydrabad');
+INSERT INTO Project VALUES(6, 'P6', 'WINDOWS', 'Pune');
+
+SELECT * FROM Emp;
+SELECT * FROM Emp2;
+SELECT * FROM Project;
+
+SELECT E_id FROM Emp2 WHERE Project IN ('IOT');
+
+SELECT E_name FROM Emp WHERE Salary IN(
+	SELECT MAX(Salary) FROM Emp GROUP BY Dept
+);
+
+SELECT MAX(Salary), Dept FROM Emp GROUP BY Dept;
